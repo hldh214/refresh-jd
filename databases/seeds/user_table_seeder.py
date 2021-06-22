@@ -9,7 +9,7 @@ You can run this seeder in order to generate users.
 
 from masoniteorm.seeds import Seeder
 
-from app.User import User
+from app.models.User import User
 from config.factories import factory
 
 

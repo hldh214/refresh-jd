@@ -12,6 +12,7 @@ class CreateUsersTable(Migration):
             table.string("remember_token").nullable()
             table.timestamp("verified_at").nullable()
             table.timestamps()
+            table.soft_deletes()
 
     def down(self):
         """Revert the migrations."""

@@ -1,5 +1,5 @@
 from masoniteorm.factories import Factory
-from app.User import User
+from app.models.User import User
 
 factory = Factory
 

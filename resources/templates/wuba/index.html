@@ -1,0 +1,14 @@
+{% extends 'auth/base.html' %}
+
+{% block content %}
+<div>
+    <ul class="list-group">
+        {% for wuba_job in wuba_jobs %}
+        <li class="list-group-item">
+            <span>{{ wuba_job.name }}</span>
+            <span class="float-right">last_run: {{ wuba_job.last_run }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
