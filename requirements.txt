@@ -3,3 +3,5 @@ masonite-logging>=1.0,<2.0
 masonite-validation>=3.0,<4.0
 masonite-scheduler>=3.0,<4.0
 pymysql==1.0.*
+schedule==1.1.*
+requests==2.25.*

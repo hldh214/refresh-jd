@@ -11,6 +11,11 @@ class WubaJob(Model, SoftDeletesMixin):
     """WubaJob Model."""
     __timezone__ = "Asia/Hong_Kong"
 
+    __guarded__  = ['id']
+
+    STATUS_PAUSED = 'STATUS_PAUSED'
+    STATUS_RUNNING = 'STATUS_RUNNING'
+
     @has_many('task_id', 'id')
     def task_logs(self):
         return TaskLog

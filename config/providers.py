@@ -22,6 +22,8 @@ from masonite.validation.providers import ValidationProvider
 from masoniteorm.providers import ORMProvider
 from masonite.scheduler.providers import ScheduleProvider
 
+from app.providers.SchedulerProvider import SchedulerProvider
+
 """Providers List
 Providers are a simple way to remove or add functionality for Masonite
 The providers in this list are either ran on server start or when a
@@ -54,4 +56,5 @@ PROVIDERS = [
     ValidationProvider,
     ORMProvider,
     # Application Providers
+    SchedulerProvider,
 ]

@@ -1,6 +1,6 @@
 """Web Routes."""
 
-from masonite.routes import Get, Post, RouteGroup
+from masonite.routes import Get, Post, Patch, RouteGroup
 
 ROUTES = [
     Get("/", "WelcomeController@show").name("welcome"),
@@ -13,6 +13,7 @@ ROUTES = [
         Get("/home", "auth.HomeController@show").name("home"),
     ]),
     RouteGroup([
-        Get("/wuba", "WubaController@index")
+        Get("/wuba", "WubaController@index"),
+        Patch("/wuba/@job_id", "WubaController@update"),
     ], middleware=('auth',)),
 ]

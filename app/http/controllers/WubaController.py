@@ -3,6 +3,7 @@
 from masonite.auth import Auth
 from masonite.view import View
 from masonite.controllers import Controller
+from masonite.request import Request
 from masonite.helpers import compact
 from app.models.WubaJob import WubaJob
 
@@ -50,13 +51,15 @@ class WubaController(Controller):
 
         pass
 
-    def update(self):
+    def update(self, job_id, request: Request):
         """Edit an existing resource listing
         ex. Post target to update new Model
             Post().route("/update", WubaController)
         """
 
-        pass
+        WubaJob.find(job_id).update(request.all())
+
+        return {}
 
     def destroy(self):
         """Delete an existing resource listing
