@@ -23,9 +23,9 @@ class TaskController(Controller):
         ex. Model.all()
             Get().route("/index", TaskController)
         """
-        tasks = Task.all()
+        tasks = Task.get(['id', 'type', 'name', 'status', 'last_run', 'created_at']).to_json()
 
-        return compact(tasks)
+        return tasks
 
     def store(self):
         """Create a new resource listing
