@@ -13,7 +13,7 @@ ROUTES = [
         Get("/home", "auth.HomeController@show").name("home"),
     ]),
     RouteGroup([
-        Get("/wuba", "WubaController@index"),
-        Patch("/wuba/@job_id", "WubaController@update"),
+        Get("/tasks", "TaskController@index"),
+        Patch("/tasks/@job_id", "TaskController@update"),
     ], middleware=('auth',)),
 ]
