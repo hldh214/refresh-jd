@@ -41,7 +41,7 @@ class SchedulerCommand(Command):
                 }
             ).text
             TaskLog.create({'task_id': task.id, 'response': res})
-            task.last_run = pendulum.now()
+            task.last_run = pendulum.now().to_datetime_string()
             task.save()
 
     def zhaopin(self):
@@ -72,5 +72,5 @@ class SchedulerCommand(Command):
                 }
             ).text
             TaskLog.create({'task_id': task.id, 'response': res})
-            task.last_run = pendulum.now()
+            task.last_run = pendulum.now().to_datetime_string()
             task.save()
